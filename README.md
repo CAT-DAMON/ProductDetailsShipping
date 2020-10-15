@@ -11,13 +11,23 @@
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+1. [API](#api)
 1. [Requirements](#requirements)
 1. [Development](#development)
 
-## Usage
+## API
 
-> Some usage instructions
+- CREATE
+  - Creates a product
+
+- READ
+  - Gets a product
+
+- UPDATE
+  - Changes a product
+
+- DELETE
+  - Deletes a product
 
 ## Requirements
 
