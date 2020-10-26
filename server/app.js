@@ -4,6 +4,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
+const psql = require('./psql.js');
+
 const app = express();
 
 /* OPTIONS */
@@ -16,14 +18,16 @@ app.use('/listing/:_id', express.static(path.join(__dirname, '/../dist')));
 /* ENDPOINTS */
 // Create
 app.post('/api/listing', (req, res) => {
-  // TODO: implement real thing
-  res.send(`create a listing`);
+  // res.send(`create a listing`);
+  psql.createProduct();
+  res.end();
 });
 
 // Read
 app.get('/api/listing/:_id', (req, res) => {
-  // TODO: implement real thing
-  res.send(`read listing #${req.params._id}`);
+  // res.send(`read listing #${req.params._id}`);
+  psql.readProduct()
+  res.end();
 });
 
 // Update

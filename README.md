@@ -47,5 +47,10 @@ npm install -g webpack
 npm install
 ```
 
+## Seeding
 
+Npm run generate will fill a new csv file
+Npm run psql:seed will seed a psql db
+
+## DB endpoints
 
