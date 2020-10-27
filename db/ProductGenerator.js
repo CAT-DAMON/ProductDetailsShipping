@@ -3,14 +3,27 @@ const fs = require('fs');
 const { writer } = require('repl');
 const Product = require('./Product.js');
 
-const entries = 1000000;
+const entries = 10000000;
 const encoding = 'utf8';
 const fileOut = 'products.csv';
 
 const writeStream = fs.createWriteStream(fileOut);
 
 // header
-writeStream.write('id,productName,price,totalSales,reviews,inStock,creator,quantity,handmade,description,ready,from\n', encoding);
+writeStream.write(
+  'id,\
+  productName,\
+  price,\
+  totalSales,\
+  reviews,\
+  inStock,\
+  creator,\
+  quantity,\
+  handmade,\
+  description,\
+  ready,\
+  from\n',
+encoding);
 
 const write = function(i) {
   let hasRoom = true;
@@ -29,8 +42,8 @@ const write = function(i) {
     i++;
   }
 
+  // drain stock
   if (!hasRoom && i < entries) {
-    // drain stock
     writeStream.once('drain', () => write(i));
   }
 };
